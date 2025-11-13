@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+    <!--<TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>-->
+    <TargetFrameworks>net8.0</TargetFrameworks>
     <IsPackable>true</IsPackable>
     <RootNamespace>Avalonia.Labs.Input</RootNamespace>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -10,9 +11,13 @@
     <None Include="README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
+  <ItemGroup Condition="'$(UseAvaloniaFork)' == 'False'">
+    <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)"/>
   </ItemGroup>
+
+  <Import Condition="'$(UseAvaloniaFork)' == 'True'" Project="..\..\AvaloniaInclude.props" />
+  <Import Condition="'$(UseAvaloniaFork)' == 'True'" Project="$(AvaloniaRootDir)\build\BuildTargets.targets"/>
+  <Import Condition="'$(UseAvaloniaFork)' == 'True'" Project="$(AvaloniaRootDir)\build\SourceGenerators.props" />
 
   <ItemGroup>
     <InternalsVisibleTo Include="AvaloniaEdit, PublicKeyToken=" />

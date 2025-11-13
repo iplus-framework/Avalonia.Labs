@@ -1,15 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
+    <!--<TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>-->
+    <TargetFrameworks>net8.0</TargetFrameworks>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(UseAvaloniaFork)' == 'False'">
     <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
     <PackageReference Include="Avalonia.Skia" Version="$(AvaloniaVersion)" />
   </ItemGroup>
 
+  <Import Condition="'$(UseAvaloniaFork)' == 'True'" Project="..\..\AvaloniaInclude.props" />
+  <Import Condition="'$(UseAvaloniaFork)' == 'True'" Project="$(AvaloniaRootDir)\build\BuildTargets.targets"/>
+  <Import Condition="'$(UseAvaloniaFork)' == 'True'" Project="$(AvaloniaRootDir)\build\SourceGenerators.props" />
+  
   <ItemGroup>
     <AvaloniaXaml Include="**/*.xaml" />
   </ItemGroup>
