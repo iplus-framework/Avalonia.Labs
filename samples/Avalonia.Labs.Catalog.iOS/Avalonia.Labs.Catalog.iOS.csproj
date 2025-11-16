@@ -10,9 +10,15 @@
     <CodesignProvision>iOS Team Provisioning Profile: companyName.Avalonia.Labs.Catalog</CodesignProvision>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Avalonia.iOS" Version="$(AvaloniaSampleVersion)" />
+  <ItemGroup Condition="'$(UseAvaloniaFork)' == 'False'">
+    <PackageReference Include="Avalonia.iOS" />
   </ItemGroup>
+  <!-- iPlus settings and overrides -->
+  <Import Condition="'$(UseAvaloniaFork)' == 'True'" Project="../../../iPlus/build/AvaloniaInclude.props" />
+  <Import Condition="'$(UseAvaloniaFork)' == 'True'" Project="$(AvaloniaRootDir)/build/BuildTargets.targets" />
+  <Import Condition="'$(UseAvaloniaFork)' == 'True'" Project="$(AvaloniaRootDir)/build/SourceGenerators.props" />
+  <Import Condition="'$(UseAvaloniaFork)' == 'True'" Project="../../../iPlus/build/AvaloniaBaseIOSInclude.props" />
+  <!-- End iPlus settings and overrides -->
 
   <ItemGroup>
     <ProjectReference Include="..\Avalonia.Labs.Catalog\Avalonia.Labs.Catalog.csproj" />

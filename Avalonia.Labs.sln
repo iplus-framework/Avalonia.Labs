@@ -21,9 +21,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{7B27D916-C961-4777-8236-4DA878DB782F}"
 	ProjectSection(SolutionItems) = preProject
 		build\avalonia.snk = build\avalonia.snk
-		AvaloniaInclude.props = AvaloniaInclude.props
 		azure-pipelines.yml = azure-pipelines.yml
 		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
 		build\NetAnalyzers.props = build\NetAnalyzers.props
 		build\NullableEnable.props = build\NullableEnable.props
 		build\SharedVersion.props = build\SharedVersion.props
