@@ -2,7 +2,8 @@
 
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-    <TargetFrameworks>net8.0;net8.0-android;net8.0-ios</TargetFrameworks>
+    <!--<TargetFrameworks>net8.0;net8.0-android;net8.0-ios</TargetFrameworks>-->
+    <TargetFrameworks>net8.0;net8.0-android</TargetFrameworks>
     <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net8.0-ios'">13.0</SupportedOSPlatformVersion>
     <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net8.0-android'">21.0</SupportedOSPlatformVersion>
     <Nullable>annotations</Nullable>
