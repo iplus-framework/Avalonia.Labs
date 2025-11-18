@@ -17,7 +17,8 @@ namespace Avalonia.Labs.Catalog.Android;
     Icon = "@drawable/icon",
     MainLauncher = true,
     ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.UiMode)]
-public class MainActivity : AvaloniaMainActivity<App>
+//public class MainActivity : AvaloniaMainActivity<App> Before Avalonia 11.3!
+public class MainActivity : AvaloniaMainActivity
 {
     public event EventHandler<Intent> OnActivityIntent;
 

@@ -1,7 +1,9 @@
 <Project>
   <PropertyGroup>
     <Product>Avalonia.Labs</Product>
-    <Version>11.3.999</Version>
+    <Version Condition="'$(UseAvaloniaFork)' == 'False' AND '$(AvaloniaVersion)' == '' ">11.3.999</Version>
+    <Version Condition="'$(UseAvaloniaFork)' == 'False' AND '$(AvaloniaVersion)' != '' ">$(AvaloniaVersion)</Version>
+    <Version Condition="'$(UseAvaloniaFork)' == 'True'">12.0.999.0</Version>
     <Authors>Avalonia Team</Authors>
     <Copyright>Copyright 2013-$([System.DateTime]::Now.ToString(`yyyy`)) &#169; The AvaloniaUI Project</Copyright>
     <PackageProjectUrl>https://avaloniaui.net</PackageProjectUrl>

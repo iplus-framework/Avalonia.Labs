@@ -23,26 +23,5 @@
     <PackageVersion Include="MicroCom.CodeGenerator.Roslyn " Version="0.11.0" />
     <PackageVersion Include="Microsoft.Windows.CsWin32" Version="0.3.106" />
     <PackageVersion Include="Xamarin.AndroidX.Core.SplashScreen" Version="1.0.1.1" />
-
-    <!--<PackageVersion Include="Avalonia.Controls.DataGrid" Version="11.3.6" />
-    <PackageVersion Include="Avalonia.BuildServices" Version="11.3.1" />
-    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
-    <PackageVersion Include="ReactiveGenerator" Version="0.12.0" />
-    <PackageVersion Include="ReactiveUI" Version="20.4.1" />
-    <PackageVersion Include="xunit" Version="2.9.3" />
-    <PackageVersion Include="xunit.abstractions" Version="2.0.3" />
-    <PackageVersion Include="xunit.assert" Version="2.9.3" />
-    <PackageVersion Include="xunit.core" Version="2.9.3" />
-    <PackageVersion Include="xunit.extensibility.core" Version="2.9.3" />
-    <PackageVersion Include="xunit.extensibility.execution" Version="2.9.3" />
-    <PackageVersion Include="xunit.runner.console" Version="2.9.3" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.4">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageVersion>
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
-    <PackageVersion Include="Nuke.Common" Version="9.0.4" />
-    <PackageVersion Include="System.Runtime.Serialization.Formatters" Version="9.0.9" />
-    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.14.0" />-->
   </ItemGroup>
 </Project>

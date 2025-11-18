@@ -11,7 +11,7 @@
     <DefineConstants Condition="'$(TargetFramework)' == 'net8.0'">$(DefineConstants);INCLUDE_WINDOWS;INCLUDE_LINUX</DefineConstants>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(UseAvaloniaFork)' == 'False'">
     <PackageReference Include="Avalonia" />
   </ItemGroup>
 
@@ -31,8 +31,13 @@
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0-android' ">
-    <PackageReference Include="Avalonia.Android" />
+    <PackageReference Condition="'$(UseAvaloniaFork)' == 'False'" Include="Avalonia.Android" />
     <PackageReference Include="Xamarin.AndroidX.AppCompat"/>
   </ItemGroup>
+
+  <!-- iPlus settings and overrides -->
+  <Import Condition="'$(UseAvaloniaFork)' == 'True'" Project="../../../iPlus/build/AvaloniaInclude.props" />
+  <Import Condition="'$(UseAvaloniaFork)' == 'True' AND '$(TargetFramework)' == 'net8.0-android'" Project="../../../iPlus/build/AvaloniaBaseAndroidInclude.props" />
+  <!-- End iPlus settings and overrides -->
 
 </Project>
