@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <!--<TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>-->
+    <!--<TargetFrameworks>net10.0;net8.0</TargetFrameworks>-->
     <TargetFrameworks>$(AvaloniaBuildFramework)</TargetFrameworks>
     <IsPackable>true</IsPackable>
   </PropertyGroup>
@@ -10,7 +10,8 @@
     <PackageReference Include="Avalonia" />
     <PackageReference Include="Avalonia.Skia" />
   </ItemGroup>
-  <ItemGroup >
+
+  <ItemGroup>
     <PackageReference Include="SkiaSharp" />
   </ItemGroup>
 

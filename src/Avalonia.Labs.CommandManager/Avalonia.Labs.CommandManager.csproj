@@ -20,6 +20,6 @@
   <!-- End iPlus settings and overrides -->
 
   <ItemGroup>
-    <InternalsVisibleTo Include="AvaloniaEdit, PublicKeyToken=" />
+    <InternalsVisibleTo Include="AvaloniaEdit, PublicKey=$(AvaloniaPublicKey)" />
   </ItemGroup>
 </Project>

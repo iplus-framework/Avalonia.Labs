@@ -6,13 +6,19 @@
     <TargetFrameworks>net8.0;net8.0-android</TargetFrameworks>
     <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net8.0-ios'">13.0</SupportedOSPlatformVersion>
     <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net8.0-android'">21.0</SupportedOSPlatformVersion>
+    <TargetFrameworks>net8.0;net10.0-android;net10.0-ios</TargetFrameworks>
+    <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net10.0-ios'">13.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net10.0-android'">26.0</SupportedOSPlatformVersion>
     <Nullable>annotations</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <IsPackable>true</IsPackable>
     <DefineConstants Condition="'$(TargetFramework)' == 'net8.0'">$(DefineConstants);INCLUDE_WINDOWS;INCLUDE_LINUX</DefineConstants>
+    <!-- ModuleInitializer in microcom codegen -->
+    <NoWarn>$(NoWarn);CA2255</NoWarn>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(UseAvaloniaFork)' == 'False'">
+  <ItemGroup>
     <PackageReference Include="Avalonia" />
   </ItemGroup>
 
@@ -25,6 +31,7 @@
     <PackageReference Include="Tmds.DBus.Protocol" />
     <PackageReference Include="Tmds.DBus.SourceGenerator" PrivateAssets="all" />
     <PackageReference Include="MicroCom.CodeGenerator.Roslyn " PrivateAssets="all" />
+    <PackageReference Include="MicroCom.CodeGenerator.Roslyn" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Windows.CsWin32">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -34,6 +41,9 @@
   <ItemGroup Condition=" '$(TargetFramework)' == 'net8.0-android' ">
     <PackageReference Condition="'$(UseAvaloniaFork)' == 'False'" Include="Avalonia.Android" />
     <PackageReference Include="Xamarin.AndroidX.AppCompat"/>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net10.0-android' ">
+    <PackageReference Include="Avalonia.Android" />
+    <PackageReference Include="Xamarin.AndroidX.AppCompat" />
   </ItemGroup>
 
   <!-- iPlus settings and overrides -->
